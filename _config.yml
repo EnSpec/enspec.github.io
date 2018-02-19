@@ -1,0 +1,11 @@
+# basic options
+title: enspec
+author: ckingdon
+email: kingdon@wisc.edu
+description: A wonderful site
+twitter_username: n/a
+github_username:  ckingdon
+
+# Build settings
+markdown: kramdown
+theme: minima
