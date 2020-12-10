@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="plugin/highlight/sunburst.css" id="highlight-theme">
 	</head>
 	<body>
 		<div class="reveal">
@@ -23,7 +23,7 @@
   			  <!--Title --> 
 			  <section><p style="font-size:100px"><b>HyTools</b></p>
 			    <p>A python toolkit for processing hyperspectral imagery</p>
-			    <p><a href="https://github.com/EnSpec/hytools">https://github.com/EnSpec/hytools</a></p>
+			    <p><a href="https://github.com/EnSpec/hytools" target = "_blank">github.com/EnSpec/hytools</a></p>
 			  </section>
 
 			  <!--Problem -->
@@ -35,16 +35,48 @@
 
 
 			    </section>			  
+
+			  <!--Solution...HyTools-->
+			  <section>
+
+			    <section></section>
+
+			    <section>
+			      <pre><code data-trim data-noescape>
+				  import hytools as ht
+
+				  '''Create and populate HyTools container'''
+				  
+				  envi = ht.HyTools()
+
+				  envi.read_data('./envi_file.bin',file_type= 'envi')
+
+				  
+				  </code></pre>
+
+			    </section>
+
+
+			    </section>	
+
 			  
 			  <!--Topographic Correction -->
-			    <Section><p style="font-size:100px">Topographic Corretion</p>
+			    <Section><p style="font-size:100px">Topographic Correction</p>
 			    </section>	
 			  
 			  <!--BRDF section slides --> 
 			  <section> 	
-			    <section><p style="font-size:100px">BRDF Correction</p>
+			    <section><p style="font-size:100px">BRDF Correction</p></section>
+	
+			    <section><img src='/assets/brdf_schematic.png'>
+			             <p style="font-size:25px"><a href
+			             ="https://modis.gsfc.nasa.gov/data/atbd/atbd_mod09.pdf"
+			             target='_blank'>MODIS Science
+			             Team</a></p>
 			    </section>
+			    
 
+			    
 			  <section>
 				  Ross Volume Kernels
 				  \[\begin{aligned}
@@ -54,15 +86,28 @@
 				  \end{aligned} \]
 			   </section>
 
-				
+			  <section>
+				  Li Geometric Kernels
+				  \[\begin{aligned} \kappa_{sparse}
+				  &amp; = O(\theta'_{i},\theta'_{v},\phi) - \sec\theta'_{i}-\sec\theta'_{v}
+				  + \frac{1}{2}(1 + \cos\xi')\sec\theta'_{v})
+				  \\
+				  \\ \kappa_{dense}
+				  &amp; = \frac{(1+
+				  \cos\xi')\sec\theta'_{v}}{\sec\theta'_{v}+\sec\theta'_{i}
+				  - O(\theta'_{i},\theta'_{v})}-2 \\
+				  \end{aligned} \]
+			   </section>
+
+			  
 				<section>
 				  <link rel="stylesheet" href="css/slider.css">
 				  <script src="plugin/slider/slider.js" type="text/javascript" ></script>
 
 				  <div id="slider" class="beer-slider" data-beer-label="">
-				    <img src="assets/3d_rgb.jpg" alt="">
+				    <img src="assets/brdf_corr.png" alt="">
 				    <div class="beer-reveal" data-beer-label="">
-				      <img src="assets/rgb_rgb.jpg" alt="">
+				      <img src="assets/brdf_nocorr.png" alt="">
 				    </div>
 				  </div>
 				  
@@ -76,6 +121,12 @@
 			    <Section><p style="font-size:100px"></p>
 			    </section>	
 
+
+			   <section>
+			    <p>Slides:</p>
+			    <p><a href="https://github.com/EnSpec/hytools">enspec.github.io/hytools</a></p>
+			  </section>
+			    
 			  
 			  
 			</div>
