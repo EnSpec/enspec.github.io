@@ -11,7 +11,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/sunburst.css" id="highlight-theme">
@@ -21,9 +21,10 @@
 			<div class="slides">
 
   			  <!--Title --> 
-			  <section><p style="font-size:100px"><b>HyTools</b></p>
+			  <section data-transition='concave'><p style="font-size:100px"><b>HyTools</b></p>
 			    <p>A python toolkit for processing hyperspectral imagery</p>
-			    <p><a href="https://github.com/EnSpec/hytools" target = "_blank">github.com/EnSpec/hytools</a></p>
+			    <p><a href="https://github.com/EnSpec/hytools"
+			    target = "_blank">github.com/EnSpec/hytools</a></p>
 			  </section>
 
 			  <!--Problem -->
@@ -70,7 +71,8 @@
 
 			  
 			  <!--Topographic Correction -->
-			    <Section><p style="font-size:100px">Topographic Correction</p>
+			    <Section><p style="font-size:100px">Topographic
+			    Correction</p>
 			    </section>	
 			  
 			  <!--BRDF section slides --> 
@@ -88,11 +90,13 @@
 			    
 			  <section>
 				  Ross Volume Kernels
-				  \[\begin{aligned}
-				  \kappa_{thin} &amp; = \frac{(\pi/2 - \xi)\cos\xi+\sin\xi}{\cos\theta_{i}+\cos{\theta_{v}}} + \frac{\pi}{2} \\
-				  \\
-				  \kappa_{thick} &amp; = \frac{(\pi/2 - \xi)\cos\xi+\sin\xi}{\cos\theta_{i}+\cos{\theta_{v}}} + \frac{\pi}{4} \\
-				  \end{aligned} \]
+				  \[\begin{aligned} \kappa_{thin}
+				  &amp; = \frac{(\pi/2 -
+				  \xi)\cos\xi+\sin\xi}{\cos\theta_{i}+\cos{\theta_{v}}}
+				  + \frac{\pi}{2} \\ \\ \kappa_{thick}
+				  &amp; = \frac{(\pi/2 -
+				  \xi)\cos\xi+\sin\xi}{\cos\theta_{i}+\cos{\theta_{v}}}
+				  + \frac{\pi}{4} \\ \end{aligned} \]
 			   </section>
 
 			  <section>
@@ -121,7 +125,8 @@
 				  </div>
 				  
 				  <script type="text/javascript">
-				    new BeerSlider(document.getElementById('slider'));
+				    new
+				    BeerSlider(document.getElementById('slider'));
 				  </script>
 				</section>
 				</section>
