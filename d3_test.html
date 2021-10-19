@@ -1,0 +1,80 @@
+<! DOCTYPE html>
+
+<html>
+<head>
+    <script src="d3.v4.js"> </script>
+    <script src="simple-statistics.js"> </script>
+    <script src="jquery-3.2.1.min.js"> </script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+    <link rel="shortcut icon" href="">
+</head>
+
+<style>
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.line {
+    stroke: black;
+    fill: none;
+    stroke-width: 4;
+    stroke-dasharray: 10 ;
+}
+
+.enter {
+  font: bold 20px monospace;
+}
+
+</style>
+
+
+<body>
+
+<input type="range" list="tickmarks" id="diameter" value="5" min="136" max="266" >
+
+<datalist id="tickmarks">
+  <option value="136">
+  <option value="141">
+  <option value="146">
+  <option value="151">
+  <option value="156">
+  <option value="161">
+  <option value="166">
+  <option value="171">
+  <option value="176">
+  <option value="181">
+  <option value="186">
+  <option value="191">
+  <option value="196">
+  <option value="201">
+  <option value="206">
+  <option value="211">
+  <option value="216">
+  <option value="221">
+  <option value="226">
+  <option value="231">
+  <option value="236">
+  <option value="241">
+  <option value="246">
+  <option value="251">
+  <option value="256">
+  <option value="261">
+  <option value="266">
+
+</datalist>
+
+
+<select id="dropdown"></select>
+
+
+
+<script src="main.js?1500"> </script>
+
+
+
+</body>
+</html>
