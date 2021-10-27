@@ -16,14 +16,14 @@ var xAxis = d3.axisBottom()
 var yAxis = d3.axisLeft()
     .scale(yScale);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".map").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var colors = d3.scaleQuantize()
-    .domain([100,500])
+    .domain([40,120])
     .range(['#000000',
     '#6d009c',
     '#002fdd',
@@ -56,7 +56,7 @@ data_json ="map/data3.csv";
 
 //initial variable setup
 var window_size = "136";
-var color_points = "chl_a_mmol_m2_";
+var color_points = "lma_g_m2_";
 var variable1 = "x_index";
 var variable2 = "y_index";
 
@@ -74,9 +74,8 @@ function update() {
             x = +d[variable1]
             y = +d[variable2]
             color = d[color_points + window_size]
-            species = d["color"]
-
-            return {"x": x, "y":y, "color":color,"species": species};
+            
+            return {"x": x, "y":y, "color":color};
             })
 
     var dots = svg.selectAll(".dot")
@@ -91,24 +90,20 @@ function update() {
       .style("fill", d=>colors(d.color))
 
     dots.data(data)
-    .transition()
-    .duration(10)
-    .ease(d3.easeLinear)
     .style("fill", function(d) { return colors(d.color); });
     dots.exit().remove();
 
 })
 }
 
-// On Click, we want to add data to the array and chart
-svg.on("click", function() {
 
+svg.on("mousedown", function() {
   d3.csv(data_json, function(data_file) {
       data = data_file.map(function(d)
           {
           x = +d[variable1]
           y = +d[variable2]
-          species = d["color"]
+          species = d["species"]
 
           return {"x": x, "y":y,"species": species};
           })
@@ -122,14 +117,19 @@ svg.on("click", function() {
     .attr("y", function(d) { return yScale(d.y); })
     .attr("width", 8)
     .attr("height", 10)
-    .style("fill", d=>colors(d.color))
 
   dots.data(data)
-  .style("fill", function(d) { return colors(d.species); });
+     .style("fill", function(d) { return d.species; });
+
   dots.exit().remove();
 
 })
 })
 
-update();
+svg.on("mouseup", function() {
+    update();
 
+  })
+
+
+update();

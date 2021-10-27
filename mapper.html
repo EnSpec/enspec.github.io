@@ -47,8 +47,8 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  width: 50px; /* Set a specific slider handle width */
+  height: 50px; /* Slider handle height */
   background: #FF5733; /* Green background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 50%;
@@ -59,14 +59,14 @@
 
 <body style="background-color:#1e1c1c;">
 
- <div class = 'slidecontainer'>
-   <input type="range" id="date" class = 'slider' value="5" min="136" max="266" step = 5>
+<div class = 'slidecontainer'>
+  <input type="range" id="date" class = 'slider' value="5" min="136" max="266" step = 5>
 </div>
 
-
-<div >
-<script src="map/mapper.js"> </script>
+<div class = 'map'>
+  <script src="map/mapper.js"> </script>
 </div>
+
 
 
 </body>
