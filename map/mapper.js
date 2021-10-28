@@ -43,15 +43,13 @@ let color_map = ['#000000',
 '#e40000',
 '#cccccc'];
 
-//xScale.domain([d3.min(data, function(d) { return d.wave; }), d3.max(data, function(d) { return d.wave; })]);
 xScale.domain([0, 63]);
-//yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 yScale.domain([50,0]);
 
 data_json ="map/data3.csv";
 
 //initial variable setup
-var window_size = "136";
+var doy = "136";
 var trait = "calcium";
 var variable1 = "x_index";
 var variable2 = "y_index";
@@ -62,12 +60,13 @@ var colors = d3.scaleQuantize()
 
 // change window size
 d3.select("#date").on("input", function() {
-  window_size = this.value;
+  doy = this.value;
   update();
 });
 
 //setup dropdown menu for coloring
 var dropDown = d3.select("#dropdown");
+var slider = document.getElementById("date")
 
 dropDown.on("change", function() {
     trait = this.value;
@@ -75,9 +74,10 @@ dropDown.on("change", function() {
     colors = d3.scaleQuantize()
     .domain(traits_ranges[trait])
     .range(color_map);
-    
+    slider.value = slider.min;
+    doy = slider.min;
     update();
-            });
+    });
 
 function update() {
 
@@ -86,7 +86,7 @@ function update() {
             {
             x = d[variable1]
             y = d[variable2]
-            color = d[trait +'_'+ window_size]
+            color = d[trait +'_'+ doy]
             
             return {"x": x, "y":y, "color":color};
             })
